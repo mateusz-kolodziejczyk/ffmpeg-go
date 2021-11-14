@@ -81,9 +81,6 @@ func MergeOutputs(streams ...*Stream) *Stream {
 func Output(streams []*Stream, fileName string, kwargs ...KwArgs) *Stream {
 	args := MergeKwArgs(kwargs)
 	if !args.HasKey("filename") {
-		if fileName == "" {
-			panic("filename must be provided")
-		}
 		args["filename"] = fileName
 	}
 
